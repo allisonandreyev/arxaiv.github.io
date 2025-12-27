@@ -118,7 +118,7 @@
           <p>From a distance, the illusion is remarkably polished. Paper titles sound technical. Layouts mimic top-tier conferences. Affiliation lines blend real institutions with subtle fakes. Diagrams appear structured and data-driven. At first glance, it’s disturbingly easy to mistake these for real submissions.</p>
           <p>But upon closer inspection, the cracks emerge. Figures, while plausible, unravel into visual noise. Affiliations contradict themselves. References cite ghosts. And though the structure is convincing, the content falters, revealing how far we still are from AI fully imitating scientific rigor.</p>
           <p class="is-size-5 has-text-weight-semibold">That gap is the point.</p>
-          <p><strong>arxAIv visualizes this gap</strong> through a series of semantic and visual embeddings. Title clusters were formed using <code>all-MiniLM-L6-v2</code> and animated in 3D with <code>3d-force-graph</code>, forming orbiting clouds of thematic similarity. Figure embeddings, generated with <code>OpenCLIP ViT-B-32</code>, were mapped to reveal how real CVPR figures tend to cluster tightly, while AI-generated ones drift further apart. The contrast is visual and visceral: human-created figures show internal logic, while the synthetic ones often slide into abstraction or contradiction.</p>
+          <p><strong>arxAIv visualizes this gap</strong> through a series of semantic and visual embeddings. Title clusters were formed using <code>all-MiniLM-L6-v2</code> and animated in 3D with <code><a href="https://github.com/vasturiano/3d-force-graph">3d-force-graph</a></code>, forming orbiting clouds of thematic similarity. Figure embeddings, generated with <code>OpenCLIP ViT-B-32</code>, were mapped to reveal how real CVPR figures tend to cluster tightly, while AI-generated ones drift further apart. The contrast is visual and visceral: human-created figures show internal logic, while the synthetic ones often slide into abstraction or contradiction.</p>
           <p>By layering false papers, hallucinated figures, and surreal affiliations into graphs, stats, and animations, arxAIv doesn’t just parody academic aesthetics — it warns of how quickly those aesthetics could be mimicked. It proposes a future where the boundary between rigorous work and visual imitation becomes harder to detect.</p>
           <p>This is not a celebration of generative AI — it’s a speculative checkpoint. If we already accept AI-generated fragments in scientific work, how far until we let it author the whole? And when we get there, how will we know what to trust?</p>
         </div>
@@ -215,7 +215,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{bibtex}</code></pre>
+    <pre><code>@misc{arxaiv2026,
+      title = {arxAIv: An AI-Generated Scientific Research Universe},
+      author = {Andreyev, Allison},
+      url = {\url{https://github.com/allisonandreyev/arxaiv.github.io}},
+    }</code></pre>
   </div>
 </section>
 
