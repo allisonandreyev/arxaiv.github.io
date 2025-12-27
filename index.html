@@ -47,14 +47,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">arxAIv: An AI Generated Research Universe</h1>
+          <h1 class="title is-1 publication-title">🎭 arxAIv: An AI Generated Research Universe</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Allison Andreyev</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Indpendent?</span>
+            <span class="author-block"><sup>1</sup>Independent</span>
           </div>
 
           <div class="column has-text-centered">
@@ -118,7 +118,7 @@
           <p>From a distance, the illusion is remarkably polished. Paper titles sound technical. Layouts mimic top-tier conferences. Affiliation lines blend real institutions with subtle fakes. Diagrams appear structured and data-driven. At first glance, it’s disturbingly easy to mistake these for real submissions.</p>
           <p>But upon closer inspection, the cracks emerge. Figures, while plausible, unravel into visual noise. Affiliations contradict themselves. References cite ghosts. And though the structure is convincing, the content falters, revealing how far we still are from AI fully imitating scientific rigor.</p>
           <p class="is-size-5 has-text-weight-semibold">That gap is the point.</p>
-          <p><strong>arxAIv visualizes this gap</strong> through a series of semantic and visual embeddings. Title clusters were formed using <code>all-MiniLM-L6-v2</code> and animated in 3D with <code><a href="https://github.com/vasturiano/3d-force-graph">3d-force-graph</a></code>, forming orbiting clouds of thematic similarity. Figure embeddings, generated with <code>OpenCLIP ViT-B-32</code>, were mapped to reveal how real CVPR figures tend to cluster tightly, while AI-generated ones drift further apart. The contrast is visual and visceral: human-created figures show internal logic, while the synthetic ones often slide into abstraction or contradiction.</p>
+          <p><strong>arxAIv visualizes this gap</strong> through a series of semantic and visual embeddings. Title clusters were formed using <code>all-MiniLM-L6-v2</code> and animated in 3D with <a href="https://github.com/vasturiano/3d-force-graph">3d-force-graph</a>, forming orbiting clouds of thematic similarity. Figure embeddings, generated with <code>OpenCLIP ViT-B-32</code>, were mapped to reveal how real CVPR figures tend to cluster tightly, while AI-generated ones drift further apart. The contrast is visual and visceral: human-created figures show internal logic, while the synthetic ones often slide into abstraction or contradiction.</p>
           <p>By layering false papers, hallucinated figures, and surreal affiliations into graphs, stats, and animations, arxAIv doesn’t just parody academic aesthetics — it warns of how quickly those aesthetics could be mimicked. It proposes a future where the boundary between rigorous work and visual imitation becomes harder to detect.</p>
           <p>This is not a celebration of generative AI — it’s a speculative checkpoint. If we already accept AI-generated fragments in scientific work, how far until we let it author the whole? And when we get there, how will we know what to trust?</p>
         </div>
@@ -164,11 +164,11 @@
         <div class="select">
           <select id="papers-cluster-select" aria-label="Select papers cluster">
             <option value="all">All clusters</option>
-            <option value="1">Cluster 1</option>
-            <option value="2">Cluster 2</option>
-            <option value="3">Cluster 3</option>
-            <option value="4">Cluster 4</option>
-            <option value="5">Cluster 5</option>
+            <option value="1">Object Detection</option>
+            <option value="2">Semantic Segmentation</option>
+            <option value="3">Image Generation</option>
+            <option value="4">Localization/Spatiotemporal Video</option>
+            <option value="5">Self-supervised Learning</option>
           </select>
         </div>
       </div>
@@ -176,6 +176,11 @@
       <p class="embed-caption">Semantic layout of 100 AI-generated computer vision papers; clusters encode topical similarity from title embeddings.</p>
     </div>
 
+    <div class="embedded-graph">
+      <h3 class="title is-4">Generated Figures</h3>
+      <iframe src="static/maps/figures.html" title="Generated figures graph" loading="lazy"></iframe>
+      <p class="embed-caption">Embedding of the generated figures alone, highlighting stylistic drift and outliers across synthetic outputs.</p>
+    </div>
     <div class="embedded-graph">
       <h3 class="title is-4">All Figures (Generated + Real)</h3>
       <div class="cluster-controls">
@@ -190,12 +195,6 @@
       </div>
       <iframe id="both-figures-iframe" src="static/maps/both_figures.html" title="Both figures graph" loading="lazy"></iframe>
       <p class="embed-caption">Comparative embedding of AI-generated and real CVPR figures; use the controls to isolate synthetic vs. real visual patterns.</p>
-    </div>
-
-    <div class="embedded-graph">
-      <h3 class="title is-4">Generated Figures</h3>
-      <iframe src="static/maps/figures.html" title="Generated figures graph" loading="lazy"></iframe>
-      <p class="embed-caption">Embedding of the generated figures alone, highlighting stylistic drift and outliers across synthetic outputs.</p>
     </div>
   </div>
 </section>
@@ -234,14 +233,14 @@
             There's a lot of excellent work that highlights the ethics of AI in generating scientific content and figures, such as:
           </p>
           <p>
-            <a href="https://doi.org/10.1007/s10676-025-09835-4"> - The ethics of erroneous AI-generated scientific figures</a> 
+           - <a href="https://doi.org/10.1007/s10676-025-09835-4">The ethics of erroneous AI-generated scientific figures</a> 
           </p>
           <p>
-            <a href="https://www.nature.com/articles/d41586-025-01463-8"> - Is it OK for AI to write science papers? Nature survey shows researchers are split</a> and <a href="https://doi.org/10.1016/j.ijpharm.2023.123741">The role of artificial intelligence in generating original scientific research</a>
-            which cover a more general perspective on AI-generated scientific content.
+            - <a href="https://www.nature.com/articles/d41586-025-01463-8">Is it OK for AI to write science papers? Nature survey shows researchers are split</a> and <a href="https://doi.org/10.1016/j.ijpharm.2023.123741">The role of artificial intelligence in generating original scientific research</a>
+            which cover a more general perspective on AI-generated scientific content
           </p>
           <p> - A fully AI generated ICLR submission by <a href="https://sakana.ai/ai-scientist-first-publication/">AI Scientist-v2</a>
-          <p> - Concerns and possible warnings: <a href="https://www.nature.com/articles/d41586-025-03046-z">Journals infiltrated with "copycat" papers that can be written by AI</a>, and <a href="https://doi.org/10.1016/j.oor.2024.100289">We are entering a new era of problems: AI-generated images in research manuscripts</a>.
+          <p> - Concerns and possible warnings: <a href="https://www.nature.com/articles/d41586-025-03046-z">Journals infiltrated with "copycat" papers that can be written by AI</a>, and <a href="https://doi.org/10.1016/j.oor.2024.100289">We are entering a new era of problems: AI-generated images in research manuscripts</a>
           </p>
         </div>
       </div>
@@ -253,11 +252,7 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/allisonandreyev/arxaiv" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>

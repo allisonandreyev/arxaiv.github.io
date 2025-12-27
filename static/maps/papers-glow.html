@@ -98,7 +98,6 @@
           : { x: 0, y: 0, z: distance };
 
         orbitPauseUntil = performance.now() + 3200;
-        highlightCluster(node.cluster ?? null);
         Graph.cameraPosition(newPos, node, 3000);
       });
 

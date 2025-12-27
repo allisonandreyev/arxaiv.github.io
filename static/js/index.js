@@ -95,6 +95,92 @@ function renderCarousel(containerId, filenames) {
   });
 }
 
+function setupContinuousMarquee(containerId, speedPxPerSec) {
+  var container = document.getElementById(containerId);
+  if (!container) {
+    return;
+  }
+
+  var slides = Array.from(container.children);
+  if (!slides.length) {
+    return;
+  }
+
+  container.innerHTML = '';
+  container.classList.add('marquee-wrapper');
+
+  var prevBtn = document.createElement('button');
+  prevBtn.className = 'marquee-arrow marquee-arrow-prev';
+  prevBtn.setAttribute('aria-label', 'Previous');
+  prevBtn.innerHTML = '←';
+
+  var nextBtn = document.createElement('button');
+  nextBtn.className = 'marquee-arrow marquee-arrow-next';
+  nextBtn.setAttribute('aria-label', 'Next');
+  nextBtn.innerHTML = '→';
+
+  var viewport = document.createElement('div');
+  viewport.className = 'marquee-viewport';
+
+  var track = document.createElement('div');
+  track.className = 'marquee-track';
+
+  slides.forEach(function(slide) {
+    track.appendChild(slide);
+  });
+  slides.forEach(function(slide) {
+    track.appendChild(slide.cloneNode(true));
+  });
+
+  viewport.appendChild(track);
+  container.appendChild(prevBtn);
+  container.appendChild(viewport);
+  container.appendChild(nextBtn);
+
+  var lastTs = null;
+  var offset = 0;
+  var trackWidth = 0;
+  var pxPerMs = Math.max(speedPxPerSec, 1) / 1000;
+
+  var images = Array.from(track.querySelectorAll('img'));
+
+  var updateWidth = function() {
+    trackWidth = track.scrollWidth / 2;
+  };
+
+  Promise.all(images.map(function(img) {
+    return new Promise(function(resolve) {
+      if (img.complete) return resolve();
+      img.onload = img.onerror = resolve;
+    });
+  })).then(updateWidth);
+
+  window.addEventListener('resize', updateWidth);
+
+  var tick = function(ts) {
+    if (lastTs === null) lastTs = ts;
+    var delta = ts - lastTs;
+    offset += pxPerMs * delta;
+    if (trackWidth > 0) {
+      offset = offset % trackWidth;
+    }
+    track.style.transform = 'translateX(' + (-offset) + 'px)';
+    lastTs = ts;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+
+  var nudge = function(direction) {
+    if (!trackWidth) return;
+    var step = trackWidth / 25; // smaller step to make arrows less powerful
+    offset = (offset + direction * step) % trackWidth;
+    if (offset < 0) offset += trackWidth;
+  };
+
+  prevBtn.addEventListener('click', function() { nudge(-1); });
+  nextBtn.addEventListener('click', function() { nudge(1); });
+}
+
 function extractMapTimeKey(filename) {
   var base = filename.replace(/\.[^.]+$/, '');
   var withoutPrefix = base.replace(/^map[_\-\s]*/i, '');
@@ -211,15 +297,6 @@ $(document).ready(function() {
 
     });
 
-    var options = {
-				slidesToScroll: 1,
-				slidesToShow: 1,
-				loop: true,
-				infinite: true,
-				autoplay: false,
-				autoplaySpeed: 3000,
-    }
-
     /*var player = document.getElementById('interpolation-video');
     player.addEventListener('loadedmetadata', function() {
       $('#interpolation-slider').on('input', function(event) {
@@ -242,25 +319,8 @@ $(document).ready(function() {
     renderCarousel('figures-carousel', buildFileList('Fig', 13));
     setupImageModal();
 
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-
-    // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
-    	// Add listener to  event
-    	carousels[i].on('before:show', state => {
-    		console.log(state);
-    	});
-    }
-
-    // Access to bulmaCarousel instance of an element
-	    var element = document.querySelector('#my-element');
-	    if (element && element.bulmaCarousel) {
-	    	// bulmaCarousel instance is available as element.bulmaCarousel
-	    	element.bulmaCarousel.on('before-show', function(state) {
-	    		console.log(state);
-	    	});
-	    }
+    setupContinuousMarquee('papers-carousel', 204);
+    setupContinuousMarquee('figures-carousel', 102);
 
     // Cluster selection for papers graph iframe
     var clusterSelect = document.getElementById('papers-cluster-select');
