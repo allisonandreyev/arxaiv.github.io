@@ -24,8 +24,8 @@ This repository hosts a small, fully AI-generated scientific dataset. All assets
 If you use this dataset, please cite the repository. Example placeholder:
 
 ```
-@misc{andreyevarxaiv,
-  title = {AI-Generated Scientific Paper Dataset},
+@misc{arxaiv2026,
+  title = {arxAIv: An AI-Generated Scientific Research Universe},
   author = {Allison Andreyev},
   howpublished = {\url{https://github.com/allisonandreyev/arxaiv.github.io}},
   note = {Version 1.0, accessed YYYY-MM-DD}
