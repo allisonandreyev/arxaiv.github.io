@@ -26,7 +26,7 @@ If you use this dataset, please cite the repository. Example placeholder:
 ```
 @misc{arxaiv2026,
   title = {arxAIv: An AI-Generated Scientific Research Universe},
-  author = {Allison Andreyev},
+  author = {Andreyev, Allison},
   howpublished = {\url{https://github.com/allisonandreyev/arxaiv.github.io}},
   note = {Version 1.0, accessed YYYY-MM-DD}
 }
