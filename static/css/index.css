@@ -1,5 +1,6 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  margin: 1in;
 }
 
 
@@ -154,4 +155,145 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.gallery-section + .gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  padding-bottom: 1rem;
+}
+
+.gallery-item figure {
+  background: #f8f8f8;
+  border-radius: 8px;
+  height: 100%;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.carousel {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#media-gallery .carousel {
+  max-width: calc(100% - 2in);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-time-group + .map-time-group {
+  margin-top: 1.5rem;
+}
+
+.map-time-title {
+  margin-bottom: 0.5rem;
+}
+
+.gallery-slide {
+  padding: 0.75rem;
+  width: auto;
+}
+
+.gallery-slide figure {
+  background: #f8f8f8;
+  border-radius: 8px;
+  height: 100%;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-slide img {
+  width: auto;
+  max-width: 95%;
+  height: clamp(180px, 24vw, 260px);
+  display: block;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#papers-carousel .gallery-slide img,
+#figures-carousel .gallery-slide img {
+  width: auto;
+  max-width: none;
+  height: clamp(360px, 48vw, 520px);
+  max-height: 520px;
+}
+
+.carousel .slider-item {
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+.carousel .slider-container {
+  justify-content: center;
+}
+
+#image-modal .modal-content {
+  max-width: 98vw;
+  max-height: 98vh;
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+#image-modal figure {
+  margin: 0;
+}
+
+#image-modal img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 98vw;
+  max-height: 95vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+#embedded-graphs .embedded-graph {
+  margin-top: 2rem;
+}
+
+#embedded-graphs .cluster-controls {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#embedded-graphs .cluster-controls .label {
+  margin-bottom: 0;
+}
+
+#embedded-graphs iframe {
+  width: 100%;
+  height: 70vh;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #fdfdfd;
+}
+
+.embed-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #4a4a4a;
 }
