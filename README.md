@@ -26,7 +26,8 @@ If you use this dataset, please cite the repository. Example placeholder:
 ```
 @misc{ai_generated_scientific_dataset,
   title = {AI-Generated Scientific Paper Dataset},
-  howpublished = {\url{https://github.com/<your-org>/arxaiv.github.io}},
+  author = {Allison Andreyev},
+  howpublished = {\url{https://github.com/allisonandreyev/arxaiv.github.io}},
   note = {Version 1.0, accessed YYYY-MM-DD}
 }
 ```
