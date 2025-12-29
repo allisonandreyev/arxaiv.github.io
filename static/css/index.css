@@ -1,6 +1,6 @@
 body {
   font-family: 'Noto Sans', sans-serif;
-  margin: 1in;
+  margin: 2rem 1.5rem 1.5rem;
 }
 
 
@@ -34,8 +34,8 @@ body {
 }
 
 
-.publication-title {
-}
+/* .publication-title {
+} */
 
 .publication-banner {
   max-height: parent;
@@ -50,8 +50,8 @@ body {
   object-fit: fit;
 }
 
-.publication-header .hero-body {
-}
+/* .publication-header .hero-body {
+} */
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
@@ -73,9 +73,6 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
-
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
 }
@@ -88,11 +85,27 @@ body {
   display: inline-block;
 }
 
-.publication-banner img {
+/* .publication-banner img {
 }
 
 .publication-authors {
-  /*color: #4286f4;*/
+  color: #4286f4;
+} */
+
+.landing-hero .hero-body {
+    padding-bottom: 1rem;
+}
+
+.landing-hero .publication-title {
+    margin-bottom: 2rem !important;
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+}
+
+.hero-subtitle {
+    margin-top: 0;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+    color: #444;
 }
 
 .publication-video {
@@ -113,8 +126,53 @@ body {
     height: 100%;
 }
 
-.publication-body img {
+.section#video {
+    padding-top: 1.5rem;
+    padding-bottom: 2.25rem;
 }
+
+#video .title {
+    margin-bottom: 0.3rem;
+    font-weight: 800;
+}
+
+#video .subtitle {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #444;
+}
+
+.video-link-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.video-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.video-pill:hover {
+    background: #000;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    transform: translateY(-1px);
+}
+
+/* .publication-body img {
+} */
 
 .results-carousel {
   overflow: hidden;
@@ -144,8 +202,8 @@ body {
   border-radius: 5px;
 }
 
-.interpolation-video-column {
-}
+/* .interpolation-video-column {
+} */
 
 .interpolation-panel .slider {
   margin: 0 !important;
