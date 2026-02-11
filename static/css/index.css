@@ -93,7 +93,7 @@ body {
 } */
 
 .landing-hero .hero-body {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .landing-hero .publication-title {
@@ -127,7 +127,7 @@ body {
 }
 
 .section#video {
-    padding-top: 1.5rem;
+    padding-top: 0.75rem;
     padding-bottom: 2.25rem;
 }
 

@@ -319,8 +319,8 @@ $(document).ready(function() {
     renderCarousel('figures-carousel', buildFileList('Fig', 13));
     setupImageModal();
 
-    setupContinuousMarquee('papers-carousel', 204);
-    setupContinuousMarquee('figures-carousel', 102);
+    setupContinuousMarquee('papers-carousel', 60);
+    setupContinuousMarquee('figures-carousel', 60);
 
     // Cluster selection for papers graph iframe
     var clusterSelect = document.getElementById('papers-cluster-select');
